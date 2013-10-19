@@ -1,13 +1,27 @@
 <!DOCTYPE HTML>
+<!--
+Color Scheme
+
+Beige: rgb(238, 234, 205)
+Darker Beige: rgb(221, 205, 180)
+Lightest Blue: rgb(161, 187, 202)
+Light Blue: rgb(118, 156, 179)
+Blue: rgb(17, 47, 97)
+Light Blush: rgb(254, 195, 187)
+Blush: rgb(184, 83, 73)
+-->
 <html>
     <head>
         <title>Jason and Deepti Wedding: Redlands, CA</title>
         <link href='http://fonts.googleapis.com/css?family=Great+Vibes|Rokkitt|Roboto+Slab' rel='stylesheet' type='text/css'>
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <style type="text/css">
             body {
                 font-family: 'Roboto Slab', serif;
                 padding: 0;
                 margin: 0;
+                background: white;
             }
 
             h1 {            
@@ -20,23 +34,59 @@
             }
 
             #navigation {
+                background: rgba(161, 187, 202, 0.8);
                 font-family: 'Rokkitt', serif;
                 top: 0;
                 left: 0;
                 width: 100%;
                 position: fixed;
+                text-align: center;
             }
 
-            #navmenu {
-                text-transform: uppercase;
-                background: red;
-                padding: 2px;
+            #headmatter {
             }
 
             .and {
                 font-size: larger;
                 font-style: normal;
             }
+
+            #navmenu {
+                text-transform: uppercase;
+                background: rgb(118, 156, 179);
+                padding: 4px;
+                border: 2px solid rgb(17, 47, 97);
+                color: white;
+            }
+
+            #navmenu a {
+                text-decoration: none;
+                color: white;
+                padding: 6px;
+            }
+
+            #padding {
+                height: 10em;
+            }
+
+            #showmenu {
+                display: none;
+            }
+
+            @media screen and (max-width : 640px) {
+                #headmatter {
+                    display: none;
+                }
+                #navmenu a {
+                    padding: .5em;
+                    display: block;
+                    border-top: 1px solid rgb(17, 47, 97);
+                }
+                #showmenu {
+                    display: block;
+                    float: right;
+                }
+            }            
         </style>
     </head>
     <body>
@@ -46,15 +96,20 @@
                 <h2>August 30, 2014</h2>
             </div>
             <div id="navmenu">
+                <div id="showmenu">
+                    <i class="icon-th-list"></i>
+                </div>
                 <a href="#event">Event</a>
                 <a href="#directions">Directions</a>
                 <a href="#venue">Venue</a>
                 <a href="#lodging">Lodging</a>
                 <a href="#registry">Registry</a>
-                <a href="#rsvp">RSVP</a>
+                <a href="#RSVP">RSVP</a>
             </div>
         </div>
 
+        <div id="padding">
+        </div>
         <p>1</p>
         <p>1</p>
         <p>1</p>

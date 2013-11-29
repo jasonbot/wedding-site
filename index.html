@@ -23,6 +23,7 @@ Blush: rgb(184, 83, 73)
                 padding: 0;
                 margin: 0;
                 background: white;
+                background-image: url(background-image.png);
             }
 
             h1 {            
@@ -68,6 +69,14 @@ Blush: rgb(184, 83, 73)
 
             #showmenu {
                 display: none;
+            }
+
+            #content {
+                max-width: 960px;
+                margin: 0 auto;
+                background: rgba(255, 255, 255, 0.8);
+                border: 2px solid rgb(17, 47, 97);
+                padding: 0.25em;
             }
 
             .toppadding {
@@ -139,21 +148,24 @@ Blush: rgb(184, 83, 73)
                 <i class="icon-plus-sign"></i>
             </div>
         </div>
-        <div class="toppadding"></div>
-        
-        <h1 id="event">Event</h1>
-        <p>There will be a Henna ceremony the night before the wedding on August 29, 2014, in Chino, California.</p>
-        <p>The wedding ceremony and reception will be on August 30, 2014 in Redlands, California.</p>
-        
-        <h1 id="directions">Directions</h1>
-        <h2>To Chino (Henna)</h2>
-        <h2>To Redlands (Ceremony/Reception)</h2>
 
-        <h1 id="venue">Venue</h1>
-        
+        <div id="content"> 
+            <div class="toppadding"></div>
 
-        <h1 id="lodging">Lodging</h1>
-        <h1 id="registry">Registry</h1>
-        <h1 id="RSVP">RSVP</h1>
+            <h1 id="event">Event</h1>
+            <p>There will be a Henna ceremony the night before the wedding on August 29, 2014, in Chino, California.</p>
+            <p>The wedding ceremony and reception will be on August 30, 2014 in Redlands, California.</p>
+            
+            <h1 id="directions">Directions</h1>
+            <h2>To Chino (Henna)</h2>
+            <h2>To Redlands (Ceremony/Reception)</h2>
+
+            <h1 id="venue">Venue</h1>
+            
+
+            <h1 id="lodging">Lodging</h1>
+            <h1 id="registry">Registry</h1>
+            <h1 id="RSVP">RSVP</h1>
+        </div>
     </body>
 </html>

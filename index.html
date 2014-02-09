@@ -27,8 +27,13 @@ Blush: rgb(184, 83, 73)
             }
 
             h1 {            
+                padding-top: 7em;
                 font-family: 'Great Vibes', cursive;
                 font-style: normal;
+            }
+
+            h1.notop {
+                padding-top: 0;
             }
 
             h2, h3, h4, h5, h6 {
@@ -79,11 +84,14 @@ Blush: rgb(184, 83, 73)
                 padding: 0.25em;
             }
 
-            .toppadding {
-                height: 10em;
+            a.active {
+                color: red;
             }
 
             @media screen and (max-width : 640px) {
+                h1 {
+                    padding-top: 1em;
+                }
                 #navigation {
                     background: none;
                 }
@@ -124,9 +132,6 @@ Blush: rgb(184, 83, 73)
                 #navigation.hidden #showmenu {
                     color: black;
                 }
-                .toppadding {
-                    height: 0;
-                }
                 #content {
                     border: none;
                 }
@@ -136,7 +141,7 @@ Blush: rgb(184, 83, 73)
     <body>
         <div id="navigation" class="hidden">
             <div id="headmatter">
-                <h1>Jason <span class="and">&amp;</span> Deepti</h1>
+                <h1 class="notop">Jason <span class="and">&amp;</span> Deepti</h1>
                 <h2>August 30, 2014</h2>
             </div>
             <div id="navmenu">
@@ -182,5 +187,34 @@ Blush: rgb(184, 83, 73)
             <h1 id="RSVP">RSVP</h1>
             <p>RSVP forthcoming with invitations</p>
         </div>
+
+
+        <script>
+        // Script to highlight scrolled-to section in navigation bar
+        $(function(){
+            var sections = {},
+                _height  = $(window).height(),
+                i        = 0;
+
+            // Grab positions of our sections
+            $('h1').each(function()
+            {
+                if (this.id !== "")
+                {
+                    console.log("Found section marker", this.id, "OK!");
+                    sections[this.name] = $(this).offset().top;
+                }
+            });
+
+            $(document).scroll(function(){
+                var $this   = $(this),
+                    pos     = $this.scrollTop(),
+                    $parent = {};
+
+                console.log("Scroll", pos);
+            });
+        });
+
+        </script>
     </body>
 </html>

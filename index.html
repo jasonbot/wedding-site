@@ -68,34 +68,5 @@ Blush: rgb(184, 83, 73)
             <h1 id="RSVP">RSVP</h1>
             <p>RSVP forthcoming with invitations</p>
         </div>
-
-
-        <script>
-        // Script to highlight scrolled-to section in navigation bar
-        $(function(){
-            var sections = {},
-                _height  = $(window).height(),
-                i        = 0;
-
-            // Grab positions of our sections
-            $('h1').each(function()
-            {
-                if (this.id !== "")
-                {
-                    console.log("Found section marker", this.id, "OK!");
-                    sections[this.name] = $(this).offset().top;
-                }
-            });
-
-            $(document).scroll(function(){
-                var $this   = $(this),
-                    pos     = $this.scrollTop(),
-                    $parent = {};
-
-                console.log("Scroll", pos);
-            });
-        });
-
-        </script>
     </body>
 </html>

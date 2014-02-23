@@ -122,25 +122,27 @@ a:hover {
 	display: block;
 	font-size: 2em;
 	margin-bottom: 10px;
+    font-family: "FontAwesome";
 }
 
 .bl-icon-about:before {
-	content: "\e000";
+	content: "\f073";
 }
 
 .bl-icon-works:before {
-	content: "\e001";
+	content: "\f083";
 }
 
 .bl-icon-blog:before {
-	content: "\e002";
+	content: "\f041";
 }
 
 .bl-icon-contact:before {
-	content: "\e003";
+	content: "\f06b";
 }
 
 .bl-main > section .bl-icon-close {
+    font-family: "FontAwesome";
 	position: absolute;
 	top: 20px;
 	right: 20px;
@@ -151,7 +153,7 @@ a:hover {
 }
 
 .bl-icon-close:before {
-	content: "\e005";
+	content: "\f057";
 }
 
 .bl-content, 

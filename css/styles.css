@@ -20,6 +20,11 @@ h2, h3, h4, h5, h6 {
     font-family: 'Rokkitt', serif;
 }
 
+#locationmap {
+    height: 80%;
+    background: white;
+}
+
 #slides {
     display: none;
     background: white;

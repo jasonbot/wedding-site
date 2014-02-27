@@ -36,7 +36,7 @@ Blush: rgb(184, 83, 73)
 					</div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
-				<section id="bl-work-section">
+				<section id="slidesection">
 					<div class="bl-box">
 						<h2 class="bl-icon bl-icon-works">Photos</h2>
 					</div>
@@ -122,7 +122,7 @@ Blush: rgb(184, 83, 73)
 					</div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
-				<section>
+				<section id="mapsection">
 					<div class="bl-box">
 						<h2 class="bl-icon bl-icon-blog">Map</h2>
 					</div>
@@ -139,7 +139,7 @@ Blush: rgb(184, 83, 73)
 					</div>
 					<div class="bl-content">
                         <h2>Wedding Registry</h2>
-                        <p>We are <a href="http://www1.macys.com/registry/wedding/guest/?registryId=2163134">registered at Macy's</a>.</p>                        <p>We have <a href="http://www.honeyfund.com/wedding/jasonanddeepti">also registered a Honeyfund</a> if you'd like to help us toward our honeymoon</a>
+                        <p>We are <a href="http://www1.macys.com/registry/wedding/guest/?registryId=2163134">registered at Macy's</a>.</p>                        <p>We have <a href="http://www.honeyfund.com/wedding/jasonanddeepti">also registered a Honeyfund</a> if you'd like to help us toward our honeymoon</a>.</p>
 					</div>
 					<span class="bl-icon bl-icon-close"></span>
 				</section>
@@ -152,18 +152,6 @@ Blush: rgb(184, 83, 73)
 			$(function() {
                 // Set up the slidey navigation boxes
 				Boxlayout.init();
-                // Set up the slideshow part
-                $('#slides').slidesjs({
-                  width: 940,
-                  height: 528,
-                  navigation: false
-                });
-                // Set up the map
-                var map = L.map('locationmap').setView([34.054722,-117.1825], 11);
-
-                L.tileLayer('http://otile4.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
-                            attribution: '&copy; <a href="www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                            }).addTo(map);                
             });
 		</script>
     </body>

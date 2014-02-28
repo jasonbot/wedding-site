@@ -44,7 +44,7 @@ var Boxlayout = (function() {
                       navigation: true
                     });
 
-                    $('#slides').removeClass('fadedout');
+                    $('#slidecontainerholder').removeClass('fadedout');
                 },
                 mapsection: function () {
                     // Set up the map

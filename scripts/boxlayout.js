@@ -39,8 +39,8 @@ var Boxlayout = (function() {
                 slidesection: function () {
                     // Set up the slideshow part
                     $('#slides').slidesjs({
-                      width: 640,
-                      height: 480,
+                      width: 800,
+                      height: 600,
                       navigation: true
                     });
 

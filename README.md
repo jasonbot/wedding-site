@@ -8,5 +8,5 @@ A very simple informational site for my wedding. I figure the average user is go
  
 so I'm optimizing for that. I believe the term is 'responsive design.'
 
-BSD License, swap out the colors/names/addresses/photos for your own event.
+Licenses are in the source (assume anything without is public domain), swap out the colors/names/addresses/photos for your own event.
 

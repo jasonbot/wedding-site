@@ -86,3 +86,14 @@ h2, h3, h4, h5, h6 {
   color: #9e2020
 }
 
+div.fadein {
+    opacity: 1;
+    transition: all 1.5s ease-in-out;
+    -moz-transition: all 1.5s ease-in-out;
+    -webkit-transition: all 1.5s ease-in-out;
+    -o-transition: all 1.5s ease-in-out;
+}
+
+div.fadedout {
+    opacity: 0;
+}

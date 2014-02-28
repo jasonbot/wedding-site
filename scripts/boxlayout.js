@@ -10,29 +10,29 @@
  */
 var Boxlayout = (function() {
 
-	var $el = $( '#bl-main' ),
-		$sections = $el.children( 'section' ),
-		transEndEventNames = {
-			'WebkitTransition' : 'webkitTransitionEnd',
-			'MozTransition' : 'transitionend',
-			'OTransition' : 'oTransitionEnd',
-			'msTransition' : 'MSTransitionEnd',
-			'transition' : 'transitionend'
-		},
-		// transition end event name
-		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
-		// support css transitions
-		supportTransitions = Modernizr.csstransitions;
+    var $el = $( '#bl-main' ),
+        $sections = $el.children( 'section' ),
+        transEndEventNames = {
+            'WebkitTransition' : 'webkitTransitionEnd',
+            'MozTransition' : 'transitionend',
+            'OTransition' : 'oTransitionEnd',
+            'msTransition' : 'MSTransitionEnd',
+            'transition' : 'transitionend'
+        },
+        // transition end event name
+        transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+        // support css transitions
+        supportTransitions = Modernizr.csstransitions;
 
-	function init() {
-		initEvents();
-	}
+    function init() {
+        initEvents();
+    }
 
-	function initEvents() {
-		
-		$sections.each( function() {
-			
-			var $section = $( this );
+    function initEvents() {
+        
+        $sections.each( function() {
+            
+            var $section = $( this );
 
             var $seentransitions = {};
             var $transitioncalls = {
@@ -43,6 +43,8 @@ var Boxlayout = (function() {
                       height: 480,
                       navigation: true
                     });
+
+                    $('#slides').removeClass('fadedout');
                 },
                 mapsection: function () {
                     // Set up the map
@@ -51,15 +53,17 @@ var Boxlayout = (function() {
                     L.tileLayer('http://otile4.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
                                 attribution: '&copy; <a href="www.openstreetmap.org/copyright">OpenStreetMap</a>'
                                 }).addTo(map);
+
+                    $('#locationmap').removeClass('fadedout');
                 }
             };
 
-			// expand the clicked section and scale down the others
-			$section.on( 'click', function() {
+            // expand the clicked section and scale down the others
+            $section.on( 'click', function() {
 
-				if( !$section.data( 'open' ) ) {
-					$section.data( 'open', true ).addClass( 'bl-expand bl-expand-top' );
-					$el.addClass( 'bl-expand-item' );
+                if( !$section.data( 'open' ) ) {
+                    $section.data( 'open', true ).addClass( 'bl-expand bl-expand-top' );
+                    $el.addClass( 'bl-expand-item' );
                     var idattr = $section.attr('id');
                     if (idattr !== undefined)
                     {
@@ -73,29 +77,29 @@ var Boxlayout = (function() {
                             }
                         }
                     }
-				}
+                }
 
-			} ).find( 'span.bl-icon-close' ).on( 'click', function() {
-				
-				// close the expanded section and scale up the others
-				$section.data( 'open', false ).removeClass( 'bl-expand' ).on( transEndEventName, function( event ) {
-					if( !$( event.target ).is( 'section' ) ) return false;
-					$( this ).off( transEndEventName ).removeClass( 'bl-expand-top' );
-				} );
+            } ).find( 'span.bl-icon-close' ).on( 'click', function() {
+                
+                // close the expanded section and scale up the others
+                $section.data( 'open', false ).removeClass( 'bl-expand' ).on( transEndEventName, function( event ) {
+                    if( !$( event.target ).is( 'section' ) ) return false;
+                    $( this ).off( transEndEventName ).removeClass( 'bl-expand-top' );
+                } );
 
-				if( !supportTransitions ) {
-					$section.removeClass( 'bl-expand-top' );
-				}
+                if( !supportTransitions ) {
+                    $section.removeClass( 'bl-expand-top' );
+                }
 
-				$el.removeClass( 'bl-expand-item' );
-				
-				return false;
+                $el.removeClass( 'bl-expand-item' );
+                
+                return false;
 
-			} );
+            } );
 
-		} );
-	}
+        } );
+    }
 
-	return { init : init };
+    return { init : init };
 
 })();

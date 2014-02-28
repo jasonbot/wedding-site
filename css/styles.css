@@ -39,7 +39,7 @@ h2, h3, h4, h5, h6 {
 #slides .slidesjs-navigation {
     margin-top: 3px;
     font-family: FontAwesome;
-    font-size: x-large;
+    font-size: 36pt;
 }
 
 #slides .slidesjs-previous {
@@ -53,21 +53,25 @@ h2, h3, h4, h5, h6 {
 }
 
 .slidesjs-pagination {
-    margin: 6px 0 0;
-    float: right;
+    margin: 5px 5px 5px 5px;
+    padding: 0;
+    text-align: center;
     list-style: none;
+}
+
+.slidejs-pagination ul {
 }
 
 .slidesjs-pagination li {
     float: left;
-    margin: 0 1px;
+    margin: 2px;
 }
 
 .slidesjs-pagination li a {
     display: block;
-    width: 13px;
+    width: 15px;
     height: 0;
-    padding-top: 13px;
+    padding-top: 15px;
     background-image: url(../images/pagination.png);
     background-position: 0 0;
     float: left;
@@ -76,16 +80,16 @@ h2, h3, h4, h5, h6 {
 
 .slidesjs-pagination li a.active,
 .slidesjs-pagination li a:hover.active {
-    background-position: 0 -13px
+    background-position: 0 -18px
 }
 
 .slidesjs-pagination li a:hover {
-    background-position: 0 -26px
+    background-position: 0 -36px
 }
 
 #slides a:link,
 #slides a:visited {
-    color: #333
+    color: rgb(184, 83, 73);
 }
 
 #slides a:hover,

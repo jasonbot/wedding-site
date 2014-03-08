@@ -19,6 +19,50 @@ h2, h3, h4, h5, h6 {
     font-family: 'Rokkitt', serif;
 }
 
+h3, h4, h5, h6 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+div.calendardate {
+    text-align: center;
+    margin: 0 auto;
+    width: 8em;
+    background: white;
+    color: black;
+    border: 3px solid rgb(161, 187, 202);
+    font-size: 2em;
+    border-radius: 4px;
+    box-shadow: 1px 1px 30px rgba(255, 255, 255, 0.5);
+}
+
+div.month {
+    background: rgb(161, 187, 202);
+    padding: 0.25em;
+}
+
+div.day {
+    font-size: 5em;
+    font-family: 'Great Vibes';
+}
+
+div.eventtitle {
+    background: rgb(238, 234, 205);
+    font-size: 0.5em;
+    padding: 1.0em;
+}
+
+p.signature {
+    line-height: 0.5em;
+    margin: 4em;
+    padding-left: 2em;
+}
+
+span.name {
+    font-family: 'Great Vibes';
+    font-size: 2.2em;
+}
+
 #locationmap {
     height: 80%;
     background: white;

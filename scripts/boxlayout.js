@@ -97,7 +97,8 @@ var Boxlayout = (function() {
                     var optgroups = {};
 
                     L.tileLayer('http://otile4.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
-                                attribution: '&copy; <a href="www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                attribution: '&copy; <a href="www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                                detectRetina: true
                                 }).addTo(map);
 
                     $(places).each(function(i, place) {
@@ -142,7 +143,6 @@ var Boxlayout = (function() {
                     $("#venuelist").change(function(evt) {
                         var marker = placeitems[$("#venuelist").val()];
                         map.panTo(marker.getLatLng());
-                        map.setZoom(18);
                         marker.openPopup();
                     });
 

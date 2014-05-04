@@ -48,11 +48,103 @@ var Boxlayout = (function() {
                 },
                 mapsection: function () {
                     // Set up the map
-                    var map = L.map('locationmap').setView([34.054722,-117.1825], 11);
+                    var places = [
+                        {
+                            "name": "Wedding Venue (Ollis Ranch)",
+                            "location": [34.0013447, -117.1372919],
+                            "address": "30075 Live Oak Canyon Road, Redlands, CA",
+                            "category": "Venues"
+                        },
+                        {
+                            "name": "Henna Ceremony Venue (The Commons Recreation Center)",
+                            "location": [33.9902378, -117.6584914],
+                            "address": "6550 Eucalyptus Avenue, Chino, CA",
+                            "category": "Venues"
+                        },
+                        {
+                            "name": "Comfort Suites Redlands",
+                            "location": [34.063812, -117.200708],
+                            "address": "1230 W Colton Ave Redlands, CA",
+                            "category": "Hotels"
+                        },
+                        {
+                            "name": "Ayres Hotel Redlands",
+                            "location": [34.062381, -117.196774],
+                            "address": "1015 W Colton Ave Redlands, CA",
+                            "category": "Hotels"
+                        },
+                        {
+                            "name": "Hilton Doubletree Ontario",
+                            "location": [34.066312, -117.609801],
+                            "address": "222 N Vineyard Ave Ontario, CA",
+                            "category": "Hotels"
+                        },
+                        {
+                            "name": "Ontario International Airport (ONT)",
+                            "location": [34.055978, -117.598057],
+                            "category": "Airport"
+                        }
+                    ];
+
+                    var start_value = $("#venuelist").val();
+
+                    var map = L.map('locationmap').setView([34.0013447, -117.1372919], 11);
+                    map.on('move', function(e) {
+                        $('#venuelist').val(start_value);
+                    });
+
+                    var placeitems = {};
+                    var optgroups = {};
 
                     L.tileLayer('http://otile4.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
                                 attribution: '&copy; <a href="www.openstreetmap.org/copyright">OpenStreetMap</a>'
                                 }).addTo(map);
+
+                    $(places).each(function(i, place) {
+                        if (place["location"])
+                        {
+                            var address_text = "";
+                            if (place['address'])
+                            {
+                                address_text = "<i>" + place['address'] + "</i><br>";
+                            }
+                            var popup_text = ("<b>" + place['name'] + "</b><br>" + 
+                                              address_text +
+                                              '<a href="http://maps.google.com/maps?q=' + 
+                                              place["location"].join(",") + 
+                                              '" target="_blank">Link to map</a>');
+                            var place_object = L.marker(place['location']).bindPopup(popup_text);
+                            place_object.addTo(map);
+
+                            var option = $("<option></option>");
+                            option.attr("label", place['name']);
+                            var add_to = $("#venuelist");
+                            if (place["category"])
+                            {
+                                if (place["category"] in optgroups)
+                                {
+                                    add_to =  optgroups[place["category"]];
+                                }
+                                else
+                                {
+                                    add_to = $("<optgroup></optgroup>");
+                                    add_to.attr('label', place["category"]);
+                                    $("#venuelist").append(add_to);
+                                    optgroups[place["category"]] = add_to;
+                                }
+                            }
+                            add_to.append(option);
+
+                            placeitems[place['name']] = place_object;
+                        }
+                    });
+
+                    $("#venuelist").change(function(evt) {
+                        var marker = placeitems[$("#venuelist").val()];
+                        map.panTo(marker.getLatLng());
+                        map.setZoom(18);
+                        marker.openPopup();
+                    });
 
                     $('#locationmap').removeClass('fadedout');
                 }

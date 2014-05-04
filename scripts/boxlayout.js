@@ -81,7 +81,8 @@ var Boxlayout = (function() {
                         },
                         {
                             "name": "Ontario International Airport (ONT)",
-                            "location": [34.055978, -117.598057],
+                            "location": [34.060837, -117.592495],
+                            "address": "Terminal Way, Ontario, CA",
                             "category": "Airport"
                         }
                     ];

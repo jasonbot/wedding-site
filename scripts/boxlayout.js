@@ -118,8 +118,8 @@ var Boxlayout = (function() {
                             var place_object = L.marker(place['location']).bindPopup(popup_text);
                             place_object.addTo(map);
 
-                            var option = $("<option></option>");
-                            option.attr("label", place['name']);
+                            var option = $("<option />");
+                            option.attr({ 'value': place['name']}).text(place['name']);
                             var add_to = $("#venuelist");
                             if (place["category"])
                             {

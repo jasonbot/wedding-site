@@ -142,9 +142,13 @@ var Boxlayout = (function() {
                     });
 
                     $("#venuelist").change(function(evt) {
-                        var marker = placeitems[$("#venuelist").val()];
-                        map.panTo(marker.getLatLng());
-                        marker.openPopup();
+                        var markername = $("#venuelist").val();
+                        if (markername in placeitems)
+                        {
+                            var marker = placeitems[markername];
+                            map.panTo(marker.getLatLng());
+                            marker.openPopup();
+                        }
                     });
 
                     $('#locationmap').removeClass('fadedout');

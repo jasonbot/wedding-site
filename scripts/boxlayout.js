@@ -114,7 +114,7 @@ var Boxlayout = (function() {
                                               address_text +
                                               '<a href="http://maps.google.com/maps?q=' + 
                                               place["location"].join(",") + 
-                                              '" target="_blank">Link to map</a>');
+                                              '" target="_blank">Link to Google Maps (for directions)</a>');
                             var place_object = L.marker(place['location']).bindPopup(popup_text);
                             place_object.addTo(map);
 
